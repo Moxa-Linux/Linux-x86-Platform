@@ -4,7 +4,7 @@
   - MC-3201-TL1-S-S
   - MC-3201-TL7-M-S
 
-- Suppoer Linux Dist:
+- Support Linux Dist:
   - Debian 11
   - Ubuntu 20.04 HWE
 

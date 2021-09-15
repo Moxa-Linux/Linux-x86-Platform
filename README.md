@@ -5,11 +5,11 @@ Documents for setup Linux x86 platform
 ### Kaby Lake
 [DA-682C-KL](/products/DA-682C-KL.md)<br>
 [DA-681C-KL](/products/DA-681C-KL.md)<br>
-[V-2406C-KL](/products/V-2406C-KL.md)<br>
-[V-2403C-KL](/products/V-2403C-KL.md)
+[V2406C-KL](/products/V2406C-KL.md)<br>
+[V2403C-KL](/products/V2403C-KL.md)
 
 ### Whiskey Lake
-[V-2406C-WL](/products/V-2406C-WL.md)
+[V2406C-WL](/products/V2406C-WL.md)
 
 ### Tiger Lake
 [MC-3201-TGL](/products/MC-3201-TGL.md)

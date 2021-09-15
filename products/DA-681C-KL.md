@@ -9,7 +9,7 @@
   - DA-681C-KL7-H-T
   - DA-681C-KL7-HH-T
 
-- Suppoer Linux Dist:
+- Support Linux Dist:
   - Debian 9
 
 - Necessary drivers for controlling Super IO:
