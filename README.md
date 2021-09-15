@@ -17,6 +17,7 @@ Documents for setup Linux x86 platform
 ## Linux Distribution Setup
 [CentOS-7.9](/dist/CentOS-7.9.md)<br>
 [Ubuntu-20.04](/dist/Ubuntu-20.04.md)<br>
+[Ubuntu-20.04-HWE](/dist/Ubuntu-20.04-HWE.md)<br>
 [Debian-9 (stretch)](/dist/Debian-9.md)<br>
 [Debian-10 (buster)](/dist/Debian-10.md)<br>
 [Debian-11 (bullseye)](/dist/Debian-11.md)

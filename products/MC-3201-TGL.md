@@ -5,8 +5,8 @@
   - MC-3201-TL7-M-S
 
 - Support Linux Dist:
-  - Debian 11
-  - Ubuntu 20.04 HWE
+  - [Debian-11 (bullseye)](/dist/Debian-11.md)
+  - [Ubuntu-20.04-HWE](/dist/Ubuntu-20.04-HWE.md)
 
 - Necessary drivers for controlling Super IO:
   - [moxa-it87-serial-driver](https://github.com/Moxa-Linux/moxa-it87-serial-driver/tree/master)
@@ -213,7 +213,7 @@ Default status is on Side A (value high)
 | LAN #4   | eth3 |   enp8s0      | 
 
 - For Ubuntu 20.04 LAN setting:
-I219 LAN chip: only support on Ubuntu 20.04 HWE kernel version:  
+I219 LAN chip: only support on **Ubuntu 20.04 HWE** kernel version:  
 ```
 apt update
 apt install --install-recommends linux-generic-hwe-20.04

@@ -10,7 +10,7 @@
   - DA-681C-KL7-HH-T
 
 - Support Linux Dist:
-  - Debian 9
+  - [Debian-9 (stretch)](/dist/Debian-9.md)
 
 - Necessary drivers for controlling Super IO:
   - [moxa-it87-gpio-driver](https://github.com/Moxa-Linux/moxa-it87-gpio-driver/tree/master)
