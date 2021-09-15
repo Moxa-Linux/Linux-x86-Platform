@@ -6,11 +6,10 @@ Documents for setup Linux x86 platform
 [DA-682C-KL](/products/DA-682C-KL.md)<br>
 [DA-681C-KL](/products/DA-681C-KL.md)<br>
 [V-2406C-KL](/products/V-2406C-KL.md)<br>
-[V-2403C-KL](/products/V-2403C-KL.md)<br>
+[V-2403C-KL](/products/V-2403C-KL.md)
 
 ### Whiskey Lake
-[DA-681A-I-WL CN)](/products/DA-681A-I-WL.md)<br>
-[V-2406C-WL](/products/V-2406C-WL.md)<br>
+[V-2406C-WL](/products/V-2406C-WL.md)
 
 ### Tiger Lake
 [MC-3201-TGL](/products/MC-3201-TGL.md)
