@@ -1,0 +1,80 @@
+#!/bin/sh
+#
+# mx-gpio-ctl
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+# Authors:
+#	2021	Elvis Yao <ElvisCW.Yao@moxa.com>
+#
+# Description:
+#	For controlling gpio-sysfs value from Super IO GPIO pin
+#
+
+gpio_request() {
+	local gpio=${1}
+
+	if [ ! -e "/sys/class/gpio/gpio${gpio}" ]
+	then
+		echo "${gpio}" > /sys/class/gpio/export
+	fi
+}
+
+gpio_set_value() {
+	local gpio=${1}
+	local value=${2}
+
+	gpio_request "${gpio}"
+	case "${value}" in
+	0)
+		echo "low" > "/sys/class/gpio/gpio${gpio}/direction"
+		;;
+	1)
+		echo "high" > "/sys/class/gpio/gpio${gpio}/direction"
+		;;
+	*)
+		echo "Usage: $0 [set|get] [index] [value]" >&2
+		exit 3
+	;;
+	esac
+}
+
+gpio_get_value() {
+	local gpio=${1}
+
+	gpio_request "${gpio}"
+	cat "/sys/class/gpio/gpio${gpio}/value"
+}
+
+gp() {
+	for gpiochip in /sys/class/gpio/gpiochip*
+	do
+		if cat "${gpiochip}"/label | grep -q "gpio_it87"
+		then
+			base=$(cat "${gpiochip}"/base)
+			break
+		fi
+	done
+
+	tens=$(($1 / 10))
+	units=$(($1 % 10))
+	echo $((base + 8 * (tens-1) + units))
+}
+
+if [ $# -lt 2 ]; then
+    echo "Usage: $0 [set|get] [index] [value]" >&2
+    exit 3
+fi
+
+case "$1" in
+	set)
+		gpio_set_value "$(gp $2)" $3
+	;;
+	get)
+		gpio_get_value "$(gp $2)"
+	;;
+	*)
+		echo "Usage: $0 [set|get] [index] [value]" >&2
+		exit 3
+	;;
+esac

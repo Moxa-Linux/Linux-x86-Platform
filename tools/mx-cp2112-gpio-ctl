@@ -1,0 +1,96 @@
+#!/bin/sh
+#
+# mx-cp2112-gpio-ctl
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+# Authors:
+#	2021	Elvis Yao <ElvisCW.Yao@moxa.com>
+#
+# Description:
+#	For controlling gpio-sysfs value from CP2112 GPIO pin
+#
+
+CHIP_LABEL="cp2112_gpio"
+
+gpio_request() {
+	local gpio=${1}
+
+	if [ ! -e "/sys/class/gpio/gpio${gpio}" ]
+	then
+		echo "${gpio}" > /sys/class/gpio/export
+	fi
+}
+
+gpio_set_value() {
+	local gpio=${1}
+	local value=${2}
+
+	gpio_request "${gpio}"
+	case "${value}" in
+	0)
+		echo "low" > "/sys/class/gpio/gpio${gpio}/direction"
+		;;
+	1)
+		echo "high" > "/sys/class/gpio/gpio${gpio}/direction"
+		;;
+	*)
+		echo "Usage: $0 [set|get] [index] [value]" >&2
+		exit 3
+	;;
+	esac
+}
+
+gpio_get_value() {
+	local gpio=${1}
+
+	gpio_request "${gpio}"
+	cat "/sys/class/gpio/gpio${gpio}/value"
+}
+
+check_index_valid() {
+	for gpiochip in /sys/class/gpio/gpiochip*
+	do
+		if cat "${gpiochip}"/label | grep -q "$CHIP_LABEL"
+		then
+			ngpio=$(cat "${gpiochip}"/ngpio)
+			if [ $1 -ge $ngpio ]; then
+				echo "Error: input index: '$1' is over the max number of gpio: '$ngpio'"
+				exit 1
+			fi
+		fi
+	done
+}
+
+gp() {
+	for gpiochip in /sys/class/gpio/gpiochip*
+	do
+		if cat "${gpiochip}"/label | grep -q "$CHIP_LABEL"
+		then
+			base=$(cat "${gpiochip}"/base)
+			break
+		fi
+	done
+
+	echo $((base + $1))
+}
+
+if [ $# -lt 2 ]; then
+    echo "Usage: $0 [set|get] [index] [value]" >&2
+    exit 3
+fi
+
+case "$1" in
+	set)
+		check_index_valid $2
+		gpio_set_value "$(gp $2)" $3
+	;;
+	get)
+		check_index_valid $2
+		gpio_get_value "$(gp $2)"
+	;;
+	*)
+		echo "Usage: $0 [set|get] [index] [value]" >&2
+		exit 3
+	;;
+esac
