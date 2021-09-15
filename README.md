@@ -1,19 +1,26 @@
 # Linux-x86-Platform
-Documents for setup x86 platform on Linux Distributions
+Documents for setup Linux x86 platform
 
 ## Products Page Links
-[DA-681A-I-WL (CN)](/products/DA-681A-I-WL.md)<br>
+### Kaby Lake
+[DA-682C-KL](/products/DA-682C-KL.md)<br>
+[DA-681C-KL](/products/DA-681C-KL.md)<br>
+[V-2406C-KL](/products/V-2406C-KL.md)<br>
+[V-2403C-KL](/products/V-2403C-KL.md)<br>
+
+### Whiskey Lake
+[DA-681A-I-WL CN)](/products/DA-681A-I-WL.md)<br>
+[V-2406C-WL](/products/V-2406C-WL.md)<br>
+
+### Tiger Lake
+[MC-3201-TGL](/products/MC-3201-TGL.md)
 
 ## Linux Distribution Setup
 [CentOS-7.9](/dist/CentOS-7.9.md)<br>
 [Ubuntu-20.04](/dist/Ubuntu-20.04.md)<br>
+[Debian-9 (stretch)](/dist/Debian-9.md)<br>
+[Debian-10 (buster)](/dist/Debian-10.md)<br>
 [Debian-11 (bullseye)](/dist/Debian-11.md)
-
-## RF Modules
-### Cellular
-[Telit LE910C4](/cellular/telit/LE910C4.md)
-### Wi-Fi
-[Sparklan WPEQ-261ACNI(BT)](/wifi/sparklan/WPEQ-261ACNI.md)
 
 ## How to export super IO (IT87 series) GPIO pin
 
@@ -51,7 +58,7 @@ Documents for setup x86 platform on Linux Distributions
     # if return 1 = high
     ```
 
-- An example code for set/get Super IO gpio-sysfs value from GPIO pin
+- An example code for Set/Get gpio-sysfs value from GPIO pin
 
 [mx-gpio-ctl](tools/mx-gpio-ctl)
 

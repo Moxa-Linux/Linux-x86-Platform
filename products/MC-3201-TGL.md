@@ -1,15 +1,18 @@
 # MC-3201-TGL
 
-Support Model List:
+- Support Model List:
   - MC-3201-TL1-S-S
   - MC-3201-TL7-M-S
 
-Necessary drivers for controlling Super IO:
-- [moxa-it87-serial-driver](https://github.com/Moxa-Linux/moxa-it87-serial-driver/tree/master)
-- [moxa-it87-gpio-driver](https://github.com/Moxa-Linux/moxa-it87-gpio-driver/tree/master)
-- moxa-it87-wdt-driver
-  - For Ubuntu 20.04/Debian 10 & 11 (kernel ver >= 4.19): [moxa-it87-wdt-driver(5.2)](https://github.com/Moxa-Linux/moxa-it87-wdt-driver/tree/5.2/master)
-  - For CentOS 7.9//Debian 9 (kernel ver < 4.19): [moxa-it87-wdt-driver(4.9.x)](https://github.com/Moxa-Linux/moxa-it87-wdt-driver/tree/4.9.x/master)
+- Suppoer Linux Dist:
+  - Debian 11
+  - Ubuntu 20.04 HWE
+
+- Necessary drivers for controlling Super IO:
+  - [moxa-it87-serial-driver](https://github.com/Moxa-Linux/moxa-it87-serial-driver/tree/master)
+  - [moxa-it87-gpio-driver](https://github.com/Moxa-Linux/moxa-it87-gpio-driver/tree/master)
+  - moxa-it87-wdt-driver
+    - For Ubuntu 20.04/Debian 11 (kernel ver >= 4.19): [moxa-it87-wdt-driver(5.2)](https://github.com/Moxa-Linux/moxa-it87-wdt-driver/tree/5.2/master)
 
 After `make && make install` the upon drivers,  
 please run `depmod -a` command to generate modules.dep and map files in /lib/modules/version.
