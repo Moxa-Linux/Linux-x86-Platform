@@ -1,8 +1,8 @@
-# Debian 11 (Bullseye)
+# Debian 10
 
-- Kernel version: `5.10.0-8-amd64`
-- ISO: `debian-11.0.0-amd64-netinst.iso`
-- Download Link: https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-11.0.0-amd64-netinst.iso
+- Kernel version: `4.19.0-17-amd64`
+- ISO: `debian-10.10.0-amd64-netinst.iso`
+- Download Link: https://cdimage.debian.org/cdimage/archive/10.10.0/amd64/iso-cd/debian-10.10.0-amd64-netinst.iso
 
 ## Prerequisite
 - Setup network
@@ -28,7 +28,7 @@ GRUB_CMDLINE_LINUX="[...] acpi_enforce_resources=lax"
 update-grub
 ```
 
-## Enforce to use super IO (it87) chip driver instead of iTCO driver
+## Enforce to use it87 series driver instead of iTCO driver (if needed)
 ```bash=
 vi /lib/modprobe.d/iTCO-blacklist.conf
 
@@ -36,7 +36,7 @@ blacklist iTCO_wdt
 blacklist iTCO_vendor_support
 ```
 
---
+---
 
 ## Build necessary drivers (please refer to product page)
 [Product Pages Link](/products/)
@@ -50,3 +50,4 @@ blacklist iTCO_vendor_support
 
 # Wi-Fi dial up on Debian 11
 [Sparklan/WPEQ-261ACNI](/wifi/sparklan/WPEQ-261ACNI.md)
+
