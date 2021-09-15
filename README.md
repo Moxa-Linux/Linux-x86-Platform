@@ -3,6 +3,7 @@ Documents for setup Linux x86 platform
 
 ## Products Page Links
 ### Kaby Lake
+[DA-820C-KL](/products/DA-820C-KL.md)<br>
 [DA-682C-KL](/products/DA-682C-KL.md)<br>
 [DA-681C-KL](/products/DA-681C-KL.md)<br>
 [V2406C-KL](/products/V2406C-KL.md)<br>
