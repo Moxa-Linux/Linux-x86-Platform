@@ -6,6 +6,7 @@ Documents for setup Linux x86 platform
 [DA-820C-KL](/products/DA-820C-KL.md)<br>
 [DA-682C-KL](/products/DA-682C-KL.md)<br>
 [DA-681C-KL](/products/DA-681C-KL.md)<br>
+[MC-1220-KL](/products/MC-1220-KL.md)<br>
 [V2406C-KL](/products/V2406C-KL.md)<br>
 [V2403C-KL](/products/V2403C-KL.md)
 
