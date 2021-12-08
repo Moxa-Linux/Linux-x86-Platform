@@ -14,7 +14,7 @@ Documents for setup Linux x86 platform
 [V2406C-WL](/products/V2406C-WL.md)
 
 ### Tiger Lake
-[MC-3201-TGL](/products/MC-3201-TGL.md)
+[MC-3201-TL](/products/MC-3201-TL.md)
 
 ## Linux Distribution Setup
 [CentOS-7.9](/dist/CentOS-7.9.md)<br>
